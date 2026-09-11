@@ -8,11 +8,13 @@ public class Circle {
     }
 
     public Circle(double radius) {
-        //Todo  Implement
+        this.radius = radius;
+        this.center = new Point();
     }
 
     public Circle(double radius, Point center) {
-        //Todo  Implement
+        this.radius = radius;
+        this.center = center;
     }
 
     public double getRadius() {
@@ -23,7 +25,7 @@ public class Circle {
     }
 
     public void setRadius(double radius) {
-        //Todo  Implement
+        this.radius = radius;
     }
     public void setCenter(Point center) {
         this.center = center;
@@ -33,19 +35,30 @@ public class Circle {
 
 
     public double getCircumference(){
-        //Todo  Implement
-        return 0.0;   // This will make compiler happy
+        return 2 * Math.PI * radius;
+//        return 0.0;   // This will make compiler happy
     }
 
     public double getArea(){
-        //Todo  Implement
-        return 0.0;   // This will make compiler happy
+        return Math.PI * radius * radius;
+//        return 0.0;   // This will make compiler happy
     }
 
     public boolean isInside(Point p){
-        //Todo  Implement
+        double xDifference = p.getX() - center.getX();
+        double yDifference = p.getY() - center.getY();
+
+        double distance = Math.sqrt(
+                xDifference * xDifference +
+                yDifference * yDifference
+        );
+//        return distance <= radius;
         //This is a trap!
-        return false;   // This will make compiler happy
+        return distance <= radius;   // This will make compiler happy
+    }
+
+    public String toString() {
+        return "radius: " + radius + "; center: " + center;
     }
 
 }

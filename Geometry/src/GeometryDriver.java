@@ -16,6 +16,11 @@ public class GeometryDriver {
             System.out.println("Radius can't be negative");
         }
 
+        point upper = new Point(2, 8);
+        point lower = new Point(7, 3);
+
+        Rectangle r2 = new Rectangle(upper, lower);
+        r1.display();
 
 
 //        System.out.println(c1);
